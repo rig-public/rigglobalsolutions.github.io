@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Packages | Your Blueprint for Success</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Variables --- */
+        :root {
+            --primary-color: #3A006A; /* A deep, strategic purple */
+            --secondary-color: #9C27B0; /* A vibrant accent purple */
+            --dark-color: #2c3e50; /* Dark text color */
+            --light-color: #ffffff;
+            --grey-bg: #f7f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(58, 0, 106, 0.7), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- 2. Social Proof Bar --- */
+        .social-proof {
+            background-color: var(--grey-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .logos-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logos-bar img {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logos-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- 3. The Challenge Section --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .challenge-card {
+            background: var(--light-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .challenge-card h3 {
+             color: var(--secondary-color);
+        }
+        
+        /* --- 4. Our Solution Section --- */
+        #solution {
+            background-color: var(--grey-bg);
+        }
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .differentiator-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 5. Service Packages Section --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--secondary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- 6. Case Studies & Testimonials --- */
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card, .case-study-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .case-study-card {
+            grid-column: span 2; /* Make case study span two columns */
+        }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+
+        /* --- 7. FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p { padding: 0 0 20px; }
+        
+        /* --- 8. Final CTA Section --- */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--light-color);
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .challenge-grid, .differentiators-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            .pricing-plan.pro {
+                transform: scale(1); /* Reset scaling for stacked view */
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>From Vision to Victory: Your Blueprint for Building, Scaling, and Leading the Market</h1>
+            <p>We partner with founders, SMEs, and enterprises to build resilient business models, execute flawless go-to-market strategies, and create data-driven roadmaps for sustainable success.</p>
+            <a href="#consultation" class="btn btn-primary">Book a Strategy Session</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h3>Powering the Growth of Tomorrow's Industry Leaders</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=InnovateCo" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=ScaleUp" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=MarketLead" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=NextGen+Corp" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Visionary+VC" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Is Your Strategy Keeping Pace With Your Ambition?</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For New Founders</h3>
+                        <p>"Have a game-changing idea but struggling to create a viable business model, define a clear vision, and build a solid foundation for investors?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Scaling SMEs</h3>
+                        <p>"Experiencing growing pains? Are inefficient processes, a reactive market approach, and a lack of clear direction preventing you from reaching the next level of growth?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Mid-size & VC-Funded Companies</h3>
+                        <p>"Need a comprehensive, data-driven roadmap to navigate complex market dynamics, align your entire organization, and deliver the predictable results your stakeholders demand?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Your Architectural Blueprint for Sustainable Success</h2>
+                    <p>"Strategy is more than a document; it's a dynamic blueprint for your future. Our 'Strategic Enabler' framework integrates market intelligence, financial modeling, and operational excellence to create a cohesive and actionable plan. We bridge the gap between where you are and where you want to be, ensuring every decision is aligned with your ultimate goals."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">🎯</div>
+                        <h3>Vision Alignment</h3>
+                        <p>We start with your 'why' to build a strategy with purpose and clear, long-term direction.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">⚙️</div>
+                        <h3>Process Excellence</h3>
+                        <p>We design the 'how' for seamless execution, operational efficiency, and scalable growth.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🗺️</div>
+                        <h3>Data-Driven Roadmaps</h3>
+                        <p>We define the 'what' and 'when' with clear KPIs and milestones for predictable success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Select Your Strategic Blueprint</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Starter</h3>
+                            <p class="ideal-for">New Startups / Founders</p>
+                            <div class="plan-price">₹4,999 <span>/ month</span></div>
+                            <p>Foundational strategy, including business model and vision alignment.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Vision, Mission & Goal Setting</li>
+                            <li>Business Model Design (BMC)</li>
+                            <li>SWOT & PESTEL Analysis</li>
+                            <li>Startup Strategy Advisory</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Build My Foundation</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">Scaling SMEs</p>
+                            <div class="plan-price">₹14,999 <span>/ month</span></div>
+                            <p>Go-to-Market (GTM) strategy, SOPs, and organizational planning.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Product Launch & GTM Strategy</li>
+                            <li>SOP Creation</li>
+                            <li>Organizational Design & Restructuring</li>
+                            <li>Customer Acquisition Plan</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Scale My Business</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Pro</h3>
+                            <p class="ideal-for">Mid-size / VC-Funded</p>
+                            <div class="plan-price">₹34,999 <span>/ month</span></div>
+                            <p>Comprehensive strategy roadmap, KPI dashboards, and multi-faceted planning.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>3-Year / 5-Year Strategic Roadmap</li>
+                            <li>Data & BI Strategy (KPI Dashboards)</li>
+                            <li>Digital Transformation Strategy</li>
+                            <li>Risk Identification & Mitigation</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Lead My Market</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Strategic Partnerships, Measurable Impact</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"The comprehensive roadmap and KPI dashboards from RIG were pivotal. We now have complete clarity across the organization and are consistently hitting our board-approved targets."</blockquote>
+                        <cite>— Director, VC-Funded Tech Company (Pro Tier)</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <blockquote>"The Starter package was the best investment I made. It forced me to validate my business model and gave me the confidence and clarity I needed to secure my pre-seed funding."</blockquote>
+                        <cite>— First-time Founder (Starter Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: SaaS Company Turnaround</h4>
+                         <p><strong>Client:</strong> A fast-growing SaaS company.</p>
+                        <p><strong>Challenge:</strong> Rapid growth led to chaotic internal processes and an unfocused market strategy.</p>
+                        <p><strong>Solution:</strong> Deployed our Growth package to develop a new GTM strategy and implement standardized SOPs across sales and operations.</p>
+                        <p><strong>Impact:</strong> Increased lead conversion by 40% and reduced employee onboarding time by 50%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Your Strategic Questions, Answered.</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">How do you measure the success of a strategy?</button>
+                        <div class="faq-answer">
+                            <p>Success is measured against the Key Performance Indicators (KPIs) we establish together at the beginning of our engagement. These could be financial metrics (like revenue growth or profitability), customer metrics (like acquisition cost or retention), or operational metrics (like efficiency gains). We build dashboards to track these KPIs transparently.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How involved will my team need to be in the process?</button>
+                        <div class="faq-answer">
+                            <p>Strategy is a collaborative process. We facilitate workshops and interviews with key stakeholders to ensure the strategy is grounded in your reality and gets full buy-in. While we do the heavy lifting on research, analysis, and documentation, your team's insights and participation are crucial for success.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is this a one-time plan or an ongoing partnership?</button>
+                        <div class="faq-answer">
+                            <p>While we can deliver a one-time strategic plan, our most successful clients engage with us on an ongoing basis. The monthly packages are designed for continuous partnership, allowing us to help you execute, monitor progress, and adapt the strategy as your business and the market evolve.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you adapt the strategy if market conditions change?</button>
+                        <div class="faq-answer">
+                            <p>A modern strategy is not static. Our framework is built for agility. Through regular (quarterly) reviews and continuous market monitoring, we identify shifts and work with you to pivot or adjust your roadmap. This proactive approach turns potential threats into opportunities.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">What makes your strategic approach different from other consultants?</button>
+                        <div class="faq-answer">
+                            <p>Three things: First, we are execution-focused; we build strategies that are actionable, not just theoretical. Second, our 'Strategic Enabler' framework is integrated, connecting market insights with your financial and operational realities. Third, we act as true partners, embedding ourselves in your success rather than just delivering a report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Ready to Build Your Future, Strategically?</h2>
+                <p>Let's build a resilient, scalable, and market-leading business together. Your journey to strategic clarity starts here.</p>
+                <a href="#" class="btn btn-primary">Schedule a Discovery Call</a>
+                <a href="/financial-services.html" class="secondary-link">Or, explore our integrated Financial Services.</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

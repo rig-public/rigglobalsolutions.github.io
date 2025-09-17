@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Corporate Services | Foundation of Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Variables --- */
+        :root {
+            --primary-color: #343a40; /* An authoritative charcoal/dark grey */
+            --secondary-color: #6c757d; /* A professional medium grey accent */
+            --dark-color: #212529; /* Darker text color */
+            --light-color: #ffffff;
+            --grey-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(52, 58, 64, 0.8), rgba(33, 37, 41, 0.9)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- 2. Social Proof Bar --- */
+        .social-proof {
+            background-color: var(--grey-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .logos-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logos-bar img {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logos-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- 3. The Challenge Section --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .challenge-card {
+            background: var(--light-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .challenge-card h3 {
+             color: var(--secondary-color);
+        }
+        
+        /* --- 4. Our Solution Section --- */
+        #solution {
+            background-color: var(--grey-bg);
+        }
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .differentiator-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 5. Service Packages Section --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            align-items: start;
+        }
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--primary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- 6. Case Studies & Testimonials --- */
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card, .case-study-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .case-study-card {
+            grid-column: span 2; /* Make case study span two columns */
+        }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+
+        /* --- 7. FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p { padding: 0 0 20px; }
+        
+        /* --- 8. Final CTA Section --- */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--light-color);
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .challenge-grid, .differentiators-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            .pricing-plan.pro {
+                transform: scale(1); /* Reset scaling for stacked view */
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Building Your Business on a Foundation of Legal Excellence</h1>
+            <p>From seamless incorporation and ironclad compliance to strategic legal advisory, we provide the framework you need to launch, operate, and grow with confidence.</p>
+            <a href="#consultation" class="btn btn-primary">Schedule a Legal Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h3>The Trusted Legal Partner for Ambitious Ventures</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Founder+Co" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=SME+India" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Impact+NGO" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Growth+Pvt+Ltd" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Venture LLP" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Is Your Legal Framework a Launchpad or a Liability?</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For Startup Founders</h3>
+                        <p>"Excited about your idea but daunted by the legal complexities of company registration, founders' agreements, and protecting your brand from day one?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Directors (Pvt Ltd / LLP)</h3>
+                        <p>"Concerned about meeting annual ROC filing deadlines, maintaining proper documentation, and ensuring your board resolutions are fully compliant to avoid penalties?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Growth Startups & SMEs</h3>
+                        <p>"As you scale, are you facing new legal risks related to hiring, intellectual property, and complex commercial contracts that could derail your growth?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Proactive Legal Strategy, Seamlessly Executed</h2>
+                    <p>"We view legal services not as an isolated function, but as a core component of your business strategy. Our integrated approach ensures your legal framework is perfectly aligned with your financial and operational goals. We act as your proactive partner, anticipating challenges and building the legal infrastructure you need for long-term, sustainable success."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">🚀</div>
+                        <h3>Founder-Focused</h3>
+                        <p>We simplify the entire startup journey from the complexities of incorporation to investment readiness.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">⚖️</div>
+                        <h3>Compliance Certainty</h3>
+                        <p>We manage your annual ROC and legal obligations so you can focus on running your business.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🌱</div>
+                        <h3>Growth-Ready</h3>
+                        <p>We provide the advanced legal tools and advisory you need to scale your operations safely.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Find the Right Legal Support for Your Stage</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Basic</h3>
+                            <p class="ideal-for">Startup Founders</p>
+                            <div class="plan-price">₹4,999 <span>(one-time)</span></div>
+                            <p>Company registration and basic legal agreement drafting.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Company Registration (Pvt Ltd/LLP)</li>
+                            <li>Founders' Agreement Drafting</li>
+                            <li>Start-up India/DPIIT Recognition</li>
+                            <li>Basic NDA Template</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Incorporate My Company</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Compliant</h3>
+                            <p class="ideal-for">Pvt Ltd / LLP / NGO</p>
+                            <div class="plan-price">₹12,999 <span>/ year</span></div>
+                            <p>Annual corporate compliance, including ROC filings and board resolutions.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Basic, plus:</li>
+                            <li>Annual ROC Compliance Filing</li>
+                            <li>Board Resolution & Meeting Drafting</li>
+                            <li>Director KYC (DIR-3 KYC)</li>
+                            <li>Shareholder Agreement Filings</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Ensure My Compliance</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">Growth Startups / SMEs</p>
+                            <div class="plan-price">₹24,999 <span>/ year</span></div>
+                            <p>Advanced legal support, including HR policies, trademarks, and agreements.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Compliant, plus:</li>
+                            <li>Trademark Search & Registration</li>
+                            <li>HR Policy Manual Drafting</li>
+                            <li>Custom Agreement Drafting</li>
+                            <li>ESOP & Cap Table Advisory</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Protect My Growth</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Real-World Protection, Real-World Growth</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"As we scaled, protecting our brand became critical. RIG's team handled our trademark registration flawlessly, giving us the legal protection we needed to expand into new markets with confidence."</blockquote>
+                        <cite>— CEO, SaaS Startup (Growth Tier)</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <blockquote>"The Basic package made incorporation incredibly simple. The team guided me through the entire process and drafted a solid founders' agreement, letting me focus on building my product."</blockquote>
+                        <cite>— First-time Founder (Basic Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: Achieving Perfect Compliance</h4>
+                         <p><strong>Client:</strong> An established LLP in the consulting space.</p>
+                        <p><strong>Challenge:</strong> Consistently struggled to keep track of and file annual ROC documents on time, risking penalties.</p>
+                        <p><strong>Solution:</strong> Onboarded them to the Compliant package, creating a compliance calendar and managing all filings proactively.</p>
+                        <p><strong>Impact:</strong> Achieved 100% on-time compliance for the year, avoiding late fees and ensuring good legal standing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Your Legal Questions, Answered</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">What is the difference between a Private Limited Company and an LLP?</button>
+                        <div class="faq-answer">
+                            <p>A Private Limited (Pvt Ltd) Company has a more formal structure with directors and shareholders, making it ideal for raising external funds. A Limited Liability Partnership (LLP) is simpler to manage, offers flexibility in its structure, and has lower compliance requirements, making it suitable for professional firms or businesses without immediate funding plans.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What are the consequences of missing an annual compliance filing?</button>
+                        <div class="faq-answer">
+                            <p>Missing deadlines for annual filings with the Registrar of Companies (ROC) can lead to significant penalties that increase daily. It can also result in the company being marked as "non-compliant," affecting its creditworthiness, ability to raise funds, and may even lead to the disqualification of directors.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How long does the company registration process take?</button>
+                        <div class="faq-answer">
+                            <p>Typically, the entire process, from name approval to receiving the Certificate of Incorporation, takes about 7-10 working days. This timeline depends on the accuracy of the documents submitted and the processing speed at the Ministry of Corporate Affairs (MCA).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Why do I need a trademark for my brand?</button>
+                        <div class="faq-answer">
+                            <p>A trademark provides legal protection for your brand name, logo, and slogan. It gives you the exclusive right to use them in your industry and prevents others from using a similar mark, thus protecting your brand identity, reputation, and customer goodwill.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">What is included in a standard Founders' Agreement?</button>
+                        <div class="faq-answer">
+                            <p>A Founders' Agreement is a crucial document that outlines the roles and responsibilities of each founder, equity ownership, vesting schedules, decision-making processes, intellectual property ownership, and exit clauses. It helps prevent future disputes and aligns all founders from day one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Secure Your Business Future Today</h2>
+                <p>A strong legal foundation isn't an expense—it's an investment in your success. Let's build it together.</p>
+                <a href="#" class="btn btn-primary">Book Your Legal Strategy Call</a>
+                <a href="tax-compliance.html" class="secondary-link">Or, explore our Tax & Compliance services.</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

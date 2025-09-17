@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Financial Solutions | Your Partner in Growth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Variables --- */
+        :root {
+            --primary-color: #005A9E; /* A professional blue */
+            --secondary-color: #1D8A99; /* A teal accent */
+            --dark-color: #2c3e50; /* Dark text color */
+            --light-color: #ffffff;
+            --grey-bg: #f7f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(0, 90, 158, 0.7), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- 2. Social Proof Bar --- */
+        .social-proof {
+            background-color: var(--grey-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .logos-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logos-bar img {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logos-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- 3. The Challenge Section --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .challenge-card {
+            background: var(--light-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .challenge-card h3 {
+             color: var(--secondary-color);
+        }
+        
+        /* --- 4. Our Solution Section --- */
+        #solution {
+            background-color: var(--grey-bg);
+        }
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .differentiator-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 5. Service Packages Section --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--secondary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.5rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- 6. Case Studies & Testimonials --- */
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card, .case-study-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .case-study-card {
+            grid-column: span 2; /* Make case study span two columns */
+        }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+
+        /* --- 7. FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p { padding: 0 0 20px; }
+        
+        /* --- 8. Final CTA Section --- */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--light-color);
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .challenge-grid, .differentiators-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            .pricing-plan.pro {
+                transform: scale(1); /* Reset scaling for stacked view */
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Strategic Financial Solutions to Bridge Your Vision to Value</h1>
+            <p>Integrated financial, tax, and advisory services for individuals, startups, and growing enterprises. We provide the clarity and strategy you need to thrive.</p>
+            <a href="#consultation" class="btn btn-primary">Schedule a Financial Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h3>Trusted by Industry Leaders and Innovators</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Client+A" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Client+B" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Client+C" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Client+D" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Client+E" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Navigating Financial Complexity at Every Scale</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For Individuals & Freelancers</h3>
+                        <p>"Are you struggling to manage personal tax obligations, optimize savings, and plan for your financial future while juggling your core work?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Startups & MSMEs</h3>
+                        <p>"Is keeping up with GST/IT compliance, maintaining accurate books, and generating insightful financial reports distracting you from building your business?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Funded Startups & SMEs</h3>
+                        <p>"Do you need high-level strategic financial leadership to guide fundraising, manage large projects, and make data-driven decisions, but aren't ready for a full-time CFO?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Your Integrated Financial Partner for Strategic Growth</h2>
+                    <p>"We don't just offer services; we provide a partnership. Our approach integrates deep financial expertise with legal, strategic, and technological insights from across our firm. This ensures you receive a comprehensive solution that supports not just your finances, but your entire business journey."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">📈</div>
+                        <h3>Holistic View</h3>
+                        <p>We see the bigger picture beyond the numbers to align your finances with your strategic goals.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🛡️</div>
+                        <h3>Proactive Compliance</h3>
+                        <p>Stay ahead of regulations with our expert guidance, minimizing risk and ensuring peace of mind.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">💡</div>
+                        <h3>Data-Driven Strategy</h3>
+                        <p>Leverage financial insights to make smarter, more informed decisions that fuel growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Find the Right Financial Support for Your Journey</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Starter</h3>
+                            <p class="ideal-for">Individuals / Freelancers</p>
+                            <div class="plan-price">₹2,499 <span>/ month</span></div>
+                            <p>Core focus on personal tax, credit, and budgeting support.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Personal Financial Planning</li>
+                            <li>Retirement & Tax Planning</li>
+                            <li>Credit & Insurance Advisory</li>
+                            <li>Budgeting & Expense Tracking</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">Startups / MSMEs</p>
+                            <div class="plan-price">₹9,999 <span>/ month</span></div>
+                            <p>Core compliance (GST/IT), bookkeeping, and reporting.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Accounting & Bookkeeping</li>
+                            <li>Business Taxation (GST & Income Tax)</li>
+                            <li>Financial Analysis & Reporting</li>
+                            <li>ROC Compliance & Annual Filing</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Pro</h3>
+                            <p class="ideal-for">Funded Startups / SMEs</p>
+                            <div class="plan-price">₹24,999 <span>/ month</span></div>
+                            <p>Strategic finance (Virtual CFO), project finance, and investment advisory.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CFO Services</li>
+                            <li>Project Finance & Feasibility Reports</li>
+                            <li>Startup Funding & Valuation Advisory</li>
+                            <li>Advanced Financial Analysis</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Book a Strategy Call</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Real Results for Our Clients</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"RIG's Virtual CFO service was instrumental in our Series A funding round. Their strategic insights and financial modeling gave our investors complete confidence."</blockquote>
+                        <cite>— CEO of a Funded Startup (Pro Tier)</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <blockquote>"Finally, my personal finances are in order. The Starter plan made tax season stress-free and helped me create a real budget."</blockquote>
+                        <cite>— Freelance Consultant (Starter Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: E-commerce MSME Success</h4>
+                        <p><strong>Client:</strong> A growing e-commerce MSME.</p>
+                        <p><strong>Challenge:</strong> Overwhelmed by monthly GST filings and inaccurate bookkeeping.</p>
+                        <p><strong>Solution:</strong> Implemented our Growth package, streamlining their accounting process and ensuring 100% on-time compliance.</p>
+                        <p><strong>Impact:</strong> Saved the founder 20+ hours per month and avoided potential penalties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Have Questions? We Have Answers.</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">Can I upgrade or downgrade my plan?</button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We understand that your needs can change as your business grows. You can easily upgrade or downgrade your plan at the end of any monthly billing cycle. Just contact your account manager, and we'll handle the transition seamlessly.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What accounting software do you work with?</button>
+                        <div class="faq-answer">
+                            <p>Our team is proficient with all major cloud accounting platforms, including Zoho Books, Tally, QuickBooks, and Wave. We can adapt to your existing system or help you migrate to the one that best suits your business needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How does the onboarding process work?</button>
+                        <div class="faq-answer">
+                            <p>Our onboarding is simple and structured. After an initial consultation, we'll have a kickoff meeting to understand your specific requirements, gather necessary documents securely, and set up access to your systems. We aim to be fully operational within 3-5 business days.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Are there any hidden fees?</button>
+                        <div class="faq-answer">
+                            <p>No. We believe in complete transparency. The monthly prices for our packages are all-inclusive for the services listed. Any additional services or out-of-scope work will be discussed and quoted separately for your approval before any work begins.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">Who will be my primary point of contact?</button>
+                        <div class="faq-answer">
+                            <p>You will be assigned a dedicated Account Manager who will be your primary point of contact. They will be responsible for understanding your needs, coordinating with our team of specialists (accountants, tax experts, CFOs), and ensuring you receive timely and accurate service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Ready to Achieve Financial Clarity and Strategic Growth?</h2>
+                <p>Let our experts handle the financial complexities so you can focus on what you do best.</p>
+                <a href="#" class="btn btn-primary">Schedule Your Free Consultation</a>
+                <a href="#" class="secondary-link">Or, see our other integrated solutions.</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Optional: Close all other FAQ items
+                // faqItems.forEach(i => {
+                //     i.classList.remove('active');
+                //     i.querySelector('.faq-answer').style.maxHeight = null;
+                // });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

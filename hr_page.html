@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources Services | Build Your People Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Variables --- */
+        :root {
+            --primary-color: #E67E22; /* A vibrant, professional orange */
+            --secondary-color: #F39C12; /* A complementary warm yellow/gold */
+            --dark-color: #2c3e50;
+            --light-color: #ffffff;
+            --grey-bg: #f7f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(230, 126, 34, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- 2. Social Proof Bar --- */
+        .social-proof {
+            background-color: var(--grey-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .logos-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logos-bar img {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logos-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- 3. The Challenge Section --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .challenge-card {
+            background: var(--light-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .challenge-card h3 {
+             color: var(--secondary-color);
+        }
+        
+        /* --- 4. Our Solution Section --- */
+        #solution {
+            background-color: var(--grey-bg);
+        }
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .differentiator-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 5. Service Packages Section --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            align-items: start;
+        }
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--primary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: 'FOR SCALING TEAMS';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+        }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; }
+        .plan-price { font-size: 2.2rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 1rem; font-weight: 400; color: #777; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+        .plan-features li { padding: 10px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- 6. Case Studies & Testimonials --- */
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card, .case-study-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .case-study-card {
+            grid-column: span 2; /* Make case study span two columns */
+        }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+
+        /* --- 7. FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p { padding: 0 0 20px; }
+        
+        /* --- 8. Final CTA Section --- */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--light-color);
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .challenge-grid, .differentiators-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            .pricing-plan.pro {
+                transform: scale(1); /* Reset scaling for stacked view */
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-study-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Build, Scale, and Lead with a World-Class People Strategy</h1>
+            <p>From foundational HR and compliance to strategic talent management and organizational design, we provide the expertise you need to turn your team into your greatest competitive advantage.</p>
+            <a href="#consultation" class="btn btn-primary">Get Your HR Strategy Review</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h3>The People & Culture Partner Behind Leading Businesses</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Innovate+Labs" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=ScaleUp+SaaS" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=India+Enterprises" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=First+Startup" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Good+Company" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Your People Are Your Greatest Asset. Are You Investing in Them?</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For Startups (0-10 Employees)</h3>
+                        <p>"Focused on your product and customers, but worried about setting up essential HR policies, running payroll correctly, and staying compliant from day one?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For SMEs & Funded Startups</h3>
+                        <p>"As you scale, are you struggling to attract top talent, manage performance effectively, and develop your team's skills to keep up with business demands?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Enterprises (>50 Employees)</h3>
+                        <p>"Need to move beyond day-to-day HR and implement a high-level people strategy? Are you looking for strategic CHRO-level guidance to optimize organizational design and build a lasting culture?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Your Outsourced HR Department, Tailored to Your Scale</h2>
+                    <p>"We provide more than just HR services; we deliver a flexible people operations engine designed to support you at every stage of your journey. Our integrated approach ensures your policies, payroll, talent management, and culture are not only compliant but are strategically aligned to drive your business goals forward."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">📜</div>
+                        <h3>Compliance Confidence</h3>
+                        <p>We build your HR foundation on solid, compliant ground, protecting you from risk.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🌟</div>
+                        <h3>Talent Magnetism</h3>
+                        <p>We help you attract, develop, and retain the best people in a competitive market.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🧠</div>
+                        <h3>Strategic Leadership</h3>
+                        <p>We provide the high-level insights to build a future-proof, high-performing organization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Find the HR Support That Fits Your Team</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Essentials</h3>
+                            <p class="ideal-for">Startups (0-10 employees)</p>
+                            <div class="plan-price">₹7,999 – ₹11,999 <span>/ month</span></div>
+                            <p>Foundational HR setup: policies, payroll, and basic compliance.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>HR Policy Manual Creation</li>
+                            <li>Payroll Processing & Salary Structuring</li>
+                            <li>Statutory Compliance (PF, ESI, PT)</li>
+                            <li>Employee Onboarding & Exit Management</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Set Up My HR</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">SMEs & Funded Startups</p>
+                            <div class="plan-price">₹14,999 – ₹24,999 <span>/ month</span></div>
+                            <p>Scaling HR functions: performance management, recruitment, and L&D.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Essentials, plus:</li>
+                            <li>End-to-End Recruitment (RPO)</li>
+                            <li>Performance Management System Setup</li>
+                            <li>Learning & Development (L&D) Programs</li>
+                            <li>Employee Engagement Surveys</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Scale My Team</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Enterprise</h3>
+                            <p class="ideal-for">>50 employees</p>
+                            <div class="plan-price">₹29,999+ <span>/ month</span></div>
+                            <p>Full-stack strategic HR, CHRO support, and organizational design.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Virtual CHRO / Strategic HR Support</li>
+                            <li>Organizational Design & Restructuring</li>
+                            <li>Leadership Development Programs</li>
+                            <li>HR Audit & Process Improvement</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Lead My Organization</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Transforming Workplaces, Empowering People</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"The Virtual CHRO service from RIG has been transformative. Their strategic insights into our organizational design have improved communication and efficiency across the board."</blockquote>
+                        <cite>— Director, 100-person Enterprise (Enterprise Tier)</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <blockquote>"The Essentials package gave us immediate peace of mind. Our policies are compliant, payroll runs smoothly, and we have a professional foundation to build on."</blockquote>
+                        <cite>— Founder, 5-person Startup (Essentials Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: Scaling with a People Plan</h4>
+                         <p><strong>Client:</strong> A funded tech startup scaling from 15 to 40 employees.</p>
+                        <p><strong>Challenge:</strong> Needed to hire specialized roles quickly while building a scalable performance management system.</p>
+                        <p><strong>Solution:</strong> Leveraged our Growth package for targeted recruitment (RPO) and implemented a new KRA framework.</p>
+                        <p><strong>Impact:</strong> Reduced average time-to-hire by 35% and increased employee goal clarity, leading to higher team performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Your People Questions, Answered</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">Why should I outsource HR instead of hiring in-house?</button>
+                        <div class="faq-answer">
+                            <p>Outsourcing gives you immediate access to a team of HR experts for a fraction of the cost of a full-time senior hire. It saves you time, ensures compliance, reduces administrative burden, and allows you to focus on your core business, especially in the early stages of growth.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What HRMS software do you work with?</button>
+                        <div class="faq-answer">
+                            <p>We are platform-agnostic and work with all leading HRMS providers in India, including Zoho People, Keka, GreytHR, and more. We can help you select and implement the right software for your needs or work with your existing system.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you handle sensitive employee information?</button>
+                        <div class="faq-answer">
+                            <p>Data security and confidentiality are our top priorities. We use secure, encrypted platforms for all data transfer and storage and adhere to strict data privacy protocols. All client and employee information is handled with the utmost discretion.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can you help with a one-off project like creating an employee handbook?</button>
+                        <div class="faq-answer">
+                            <p>Yes, absolutely. While our packages offer the best value for ongoing support, we also provide project-based services. Please contact us to discuss your specific needs for projects like handbook creation, a compensation review, or a one-time recruitment drive.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">How is the monthly price determined within the given range?</button>
+                        <div class="faq-answer">
+                            <p>The price within the range is primarily determined by your company's employee headcount. Other factors that can influence the final quote include the complexity of your payroll, the number of states you operate in (due to varying professional tax laws), and any specific custom requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Ready to Build a Thriving Workplace?</h2>
+                <p>Let's create a people strategy that not only ensures compliance but also drives culture, performance, and growth.</p>
+                <a href="#" class="btn btn-primary">Book a Free People & Culture Consultation</a>
+                <a href="legal-services.html" class="secondary-link">Or, explore our integrated Legal & Compliance services.</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Optional: Close all other FAQ items before opening a new one
+                faqItems.forEach(i => {
+                    if (i !== item) {
+                       i.classList.remove('active');
+                       i.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

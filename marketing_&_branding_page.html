@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding & Marketing Services | Build a Brand That Matters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Variables --- */
+        :root {
+            --primary-color: #D81B60; /* A vibrant, creative magenta */
+            --secondary-color: #F06292; /* A complementary softer pink */
+            --dark-color: #2c3e50;
+            --light-color: #ffffff;
+            --grey-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; color: var(--primary-color); text-align: center;}
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            background-image: linear-gradient(rgba(216, 27, 96, 0.8), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- 2. Social Proof Bar --- */
+        .social-proof {
+            background-color: var(--grey-bg);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+        .logos-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .logos-bar img {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logos-bar img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* --- 3. The Challenge Section --- */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* FOUR COLUMNS */
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .challenge-card {
+            background: var(--light-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .challenge-card h3 {
+             color: var(--secondary-color);
+             font-size: 1.2rem;
+        }
+        
+        /* --- 4. Our Solution Section --- */
+        #solution {
+            background-color: var(--grey-bg);
+        }
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+        }
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .differentiator-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- 5. Service Packages Section --- */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* FOUR COLUMNS */
+            gap: 20px;
+            margin-top: 50px;
+            align-items: start;
+        }
+        .pricing-plan {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .pricing-plan.pro {
+            border-color: var(--primary-color);
+            border-width: 2px;
+            position: relative;
+            transform: scale(1.05);
+        }
+        .pricing-plan.pro::before {
+            content: 'BEST FOR STARTUPS';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .plan-header h3 { color: var(--primary-color); }
+        .plan-header .ideal-for { color: #555; font-weight: 600; margin-bottom: 15px; font-size: 0.9em;}
+        .plan-price { font-size: 1.6rem; font-weight: 700; color: var(--dark-color); margin-bottom: 20px; }
+        .plan-price span { font-size: 0.9rem; font-weight: 400; color: #777; display: block; line-height: 1.2; }
+        .plan-features { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; font-size: 0.9em; }
+        .plan-features li { padding: 8px 0; border-bottom: 1px solid var(--border-color); }
+        .plan-features li:last-child { border-bottom: none; }
+        
+        /* --- 6. Case Studies & Testimonials --- */
+        #testimonials { background-color: var(--grey-bg); }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card, .case-study-card {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .case-study-card {
+            grid-column: span 2; /* Make case study span two columns */
+        }
+        .case-study-card h4 { margin-bottom: 15px; }
+        .case-study-card p { margin-bottom: 10px; }
+        .case-study-card strong { color: var(--primary-color); }
+
+        /* --- 7. FAQ Section --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-answer p { padding: 0 0 20px; }
+        
+        /* --- 8. Final CTA Section --- */
+        .final-cta {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .final-cta h2 { color: var(--light-color); }
+        .final-cta p { font-size: 1.1rem; margin-bottom: 30px; }
+        .final-cta .secondary-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--light-color);
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1200px) {
+            .pricing-table, .challenge-grid {
+                grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns on tablets */
+            }
+            .pricing-plan.pro {
+                 transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 992px) {
+             .differentiators-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+             .case-study-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero { height: auto; padding: 100px 0; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 60px 0; }
+            .pricing-table, .challenge-grid {
+                grid-template-columns: 1fr; /* Switch to 1 column on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Build a Brand That Matters. Market It to the World.</h1>
+            <p>We craft unforgettable brand identities and execute data-driven digital marketing strategies that captivate audiences, drive engagement, and deliver measurable results.</p>
+            <a href="#consultation" class="btn btn-primary">Grow My Brand</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="social-proof">
+            <div class="container">
+                <h3>The Growth Partner Behind These Successful Brands</h3>
+                <div class="logos-bar">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Local+Bakery" alt="Client Logo 1">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=SaaS+Startup" alt="Client Logo 2">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Ecomm+Store" alt="Client Logo 3">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=B2B+Corp" alt="Client Logo 4">
+                    <img src="https://via.placeholder.com/150x40/999999/FFFFFF?text=Influencer" alt="Client Logo 5">
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>Cutting Through the Noise in a Crowded Marketplace</h2>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h3>For Personal Brands & Local Businesses</h3>
+                        <p>"Need a professional identity to stand out, but don't know where to begin with logos and social media? A strong first impression is crucial."</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Startups & MSMEs</h3>
+                        <p>"Have a great product but struggling to build a cohesive brand, reach your target audience online, and generate consistent leads?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For E-Commerce & B2B</h3>
+                        <p>"Ready to scale aggressively but need a full-funnel marketing strategy that includes high-ROI paid ads, PR, and automation to convert customers?"</p>
+                    </div>
+                    <div class="challenge-card">
+                        <h3>For Long-Term Growth</h3>
+                        <p>"Looking for a dedicated partner to manage your marketing month-over-month, consistently creating content and optimizing ads?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div class="container">
+                <div class="solution-content">
+                    <h2>Where Creative Identity Meets Commercial Impact</h2>
+                    <p>"A great brand is more than a logo. A great marketing plan is more than an ad. We build a complete growth engine for your business, starting with a powerful brand strategy and executing it through targeted, multi-channel marketing campaigns that deliver real, measurable ROI."</p>
+                </div>
+                <div class="differentiators-grid">
+                    <div class="differentiator-item">
+                        <div class="icon">🎨</div>
+                        <h3>Strategic Branding</h3>
+                        <p>We build brands with a clear purpose, voice, and visual identity that connects with your audience.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">🎯</div>
+                        <h3>Full-Funnel Marketing</h3>
+                        <p>We engage your audience at every stage, from initial awareness to loyal advocacy.</p>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="icon">📈</div>
+                        <h3>Data-Driven Results</h3>
+                        <p>We track every click, lead, and sale to continuously optimize your campaigns for performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Choose Your Blueprint for Market Success</h2>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Starter</h3>
+                            <p class="ideal-for">Personal Branding / Local Biz</p>
+                            <div class="plan-price">₹9,999 – ₹14,999 <span>(one-time)</span></div>
+                            <p>Basic branding: logo and initial social media setup.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Logo Design & Brand Identity Kit</li>
+                            <li>Initial Social Media Profile Setup</li>
+                            <li>Brand Positioning Statement</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Launch My Brand</a>
+                    </div>
+                    <div class="pricing-plan pro">
+                        <div class="plan-header">
+                            <h3>Growth</h3>
+                            <p class="ideal-for">Startups & MSMEs</p>
+                            <div class="plan-price">₹24,999 – ₹44,999 <span>(one-time)</span></div>
+                            <p>Comprehensive brand identity, ads, and SEO.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Starter, plus:</li>
+                            <li>Full Brand Guidelines</li>
+                            <li>Social Media Marketing (SMM)</li>
+                            <li>Search Engine Optimization (SEO)</li>
+                            <li>Basic Google/Meta Ads Setup</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Grow My Business</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Scale</h3>
+                            <p class="ideal-for">E-Commerce / B2B</p>
+                            <div class="plan-price">₹59,999 – ₹1,20,000 <span>(one-time)</span></div>
+                            <p>Full-scale digital marketing, paid ads, PR, and automation.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth, plus:</li>
+                            <li>Advanced Paid Ads (PPC)</li>
+                            <li>Press Releases & Media (PR)</li>
+                            <li>Email & WhatsApp Automation</li>
+                            <li>Funnel & ROI Optimization</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Scale My Market</a>
+                    </div>
+                     <div class="pricing-plan">
+                        <div class="plan-header">
+                            <h3>Retainer</h3>
+                            <p class="ideal-for">Long-Term Partners</p>
+                            <div class="plan-price">₹15,000 – ₹75,000 <span>/ month</span></div>
+                            <p>Continuous monthly content, ads, and CRM support.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Monthly Content Calendar</li>
+                            <li>Ongoing Ad Management</li>
+                            <li>Lead Nurturing & CRM Support</li>
+                            <li>Monthly Performance Reporting</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Become a Partner</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Brands We've Built, Growth We've Delivered</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <blockquote>"The full-scale digital marketing campaign from RIG was a game-changer. Their expertise in paid ads and automation doubled our conversion rate in six months."</blockquote>
+                        <cite>— Founder, E-commerce Brand (Scale Tier)</cite>
+                    </div>
+                     <div class="testimonial-card">
+                        <blockquote>"The Starter package gave my business the professional look it needed. The new logo and social media pages have brought in so many new local customers."</blockquote>
+                        <cite>— Owner, Local Bakery (Starter Tier)</cite>
+                    </div>
+                    <div class="case-study-card">
+                        <h4>Case Study: From Zero to Hero in Search Rankings</h4>
+                         <p><strong>Client:</strong> A B2B SaaS startup.</p>
+                        <p><strong>Challenge:</strong> Had a great product but zero online visibility and was not showing up on Google for relevant keywords.</p>
+                        <p><strong>Solution:</strong> Deployed the Growth package to build a new brand identity, launch a targeted SEO strategy, and run initial social media ads.</p>
+                        <p><strong>Impact:</strong> Increased organic website traffic by 300% and generated 50+ qualified leads in the first quarter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Your Marketing Questions, Answered</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">How long does it take to design a logo and brand identity?</button>
+                        <div class="faq-answer">
+                            <p>A typical branding project, including logo design, color palette, typography, and a basic brand identity kit, usually takes between 2 to 4 weeks. This includes discovery, concept creation, revisions, and final delivery of all assets.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is the difference between SEO and SEM (Google Ads)?</button>
+                        <div class="faq-answer">
+                            <p>SEO (Search Engine Optimization) is the process of optimizing your website to rank higher organically (for free) in search results. SEM (Search Engine Marketing) is a broader term, but most often refers to paid advertising on search engines, like Google Ads. SEO is a long-term strategy, while SEM can deliver immediate traffic.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do you measure the ROI of a marketing campaign?</button>
+                        <div class="faq-answer">
+                            <p>We measure Return on Investment (ROI) by tracking key metrics tied to your business goals. This includes metrics like Cost Per Lead (CPL), Customer Acquisition Cost (CAC), and Customer Lifetime Value (LTV). We set up tracking and analytics to clearly demonstrate how much revenue is generated for every rupee spent on marketing.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is included in the monthly Retainer service?</button>
+                        <div class="faq-answer">
+                            <p>The Retainer is an ongoing partnership where we act as your outsourced marketing team. Depending on your needs, it includes a set number of hours or deliverables per month, such as creating social media content, managing your ad campaigns, writing blog posts, sending email newsletters, and providing detailed performance reports.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">Can you work with my existing website and social media accounts?</button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We always start by auditing your existing assets. We can work to improve and manage your current website and social media profiles, or we can recommend a redesign or a fresh start if we believe it will deliver significantly better results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="consultation" class="final-cta">
+            <div class="container">
+                <h2>Ready to Tell Your Brand's Story?</h2>
+                <p>Let's build a brand that connects with your audience and a marketing strategy that converts them into loyal customers.</p>
+                <a href="#" class="btn btn-primary">Schedule a Marketing Strategy Call</a>
+                <a href="web-development.html" class="secondary-link">Or, explore our Web Development services.</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        // --- FAQ Accordion Logic ---
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => {
+                    if (i !== item) {
+                       i.classList.remove('active');
+                       i.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    item.classList.remove('active');
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
